@@ -1,0 +1,44 @@
+div {
+	color:black;
+    text-align:center;
+    font-family: "Harrington", Times, serif;
+	font-size:20px;
+}
+body {
+    background-image: url("background 2.jpg");
+    color:white;
+}
+a {
+	color:0101DF;
+	text-decoration:none;
+	font-family: "Harrington", Times, serif;
+	font-size:20px;
+	text-decoration:underline;
+}
+.wrap {
+	min-width:600px;
+	width:80%;
+	margin:auto;
+	background-image: url("background 6.jpg");
+}
+.content, aside {
+	height:500px;
+}
+.content {
+	float:right;
+	width:60%;
+	background-image: url("background 3.jpg");
+}
+aside {
+	padding-top:0;
+	background-image: url("background 6.jpg");
+	float:right;
+	width:40%;
+}
+h1 {
+	font-family: "Moderne Fraktur", Times, serif;
+	color:FF8000;
+}
+h2 {
+	color:DF013A;
+}

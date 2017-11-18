@@ -1,0 +1,234 @@
+<html>
+<head>
+  <title>Anik's JavaScript</title>
+  <meta charset="utf-8"/>
+  <link rel="stylesheet" href="style_js.css" />
+</head>
+
+<body>
+
+	<div class="wrap">
+		<h1><font color="FF8000">Anik's &nbsp; Website &nbsp; of &nbsp; JavaScript</font></h1>
+		<div class="content">
+			
+<h1><font color="DF013A" size="6">Today's Quote</font></h1>
+<blockquote id="myDIV" style="border: 5px solid #000000; color:black; background:white; padding: 10px; width:90%" >
+
+<script language="JavaScript">
+var quoteGroups=7; 
+var quoteNum;
+var theQuote=new Array();
+
+    theQuote[0]='"Be yourself; everyone else is already taken." - Oscar Wilde';
+    theQuote[1]='T"wo things are infinite: the universe and human stupidity; and I\'m not sure about the universe." - Albert Einstein';
+    theQuote[2]='"You only live once, but if you do it right, once is enough." - Mae West';
+    theQuote[3]='"Be the change that you wish to see in the world." - Mahatma Gandhi';
+    theQuote[4]='"If you tell the truth, you don\'t have to remember anything." - Mark Twain';
+    theQuote[5]='"Always forgive your enemies; nothing annoys them so much." - Oscar Wilde';
+    theQuote[6]='"The fool doth think he is wise, but the wise man knows himself to be a fool." - William Shakespeare';
+    theQuote[7]='"Knowing yourself is the beginning of all wisdom." - Aristotle';
+
+var quoteNum = Math.round(Math.random() * quoteGroups); 
+document.write(theQuote[quoteNum]);
+</script>
+</blockquote>
+
+			<h1><font color="DF013A" size="6">Hero Converter</font></h1>	
+      <blockquote style="border: 5px solid #000000; color:black; background:white; padding: 10px; width:90%" >	
+		Convert
+      <input id="input" type="text" style="border: 3px solid #000000; color:black; width:20%">
+      <select id="convert" style="border: 3px solid #000000; color:black; width:8%">
+         <option value="kgtopounds">kg to lb</option>
+         <option value="poundstokg">lb to kg</option>
+      </select>
+      <button onclick="convert();" style="border: 3px solid #000000; color:black; width:4%">Go</button>
+      <span id="answer"></span>
+      
+      <script language="JavaScript">
+   function convert() {
+   var input = document.getElementById("input");
+   value = parseInt(input.value);
+   var conversion = document.getElementById("convert");
+   if (conversion.value == "kgtopounds") {
+      value *= 2.20462262;
+   } else {
+      value *= 0.45359237;
+   }
+   var answer = document.getElementById("answer");
+   answer.innerHTML = value;
+}
+   </script>
+</blockquote>
+
+<h1><font color="DF013A" size="6">Supper Calculator</font></h1>
+<blockquote style="border: 5px solid #000000; color:black; background: white; padding: 10px; width:90%" >
+    <table width="50%" border="0" align="center">
+      <tr>
+        <td><b>Input Series of Number</b></td>
+        <td><input name="box1" type="text" id="box1" style="border: 3px solid #000000; color:black; width:100%"/></td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><b>Max:</b></td>
+        <td><div id="max"> </div></td>
+      </tr>
+      <tr>
+        <td><b>Min:</b></td>
+        <td><div id="min"> </div></td>
+      </tr>
+      <tr>
+        <td><b>Sum:</b></td>
+        <td><div id="sum"> </div></td>
+      </tr>
+      <tr>
+        <td><b>Average:</b></td>
+        <td><div id="avg"> </div></td>
+      </tr>
+      <tr>
+        <td><b>Reverse Order:</b></td>
+        <td><div id="reverse"> </div></td>
+      </tr>
+    </table>
+
+    <script language="JavaScript">
+   onkeypress = function calculate() {
+  var values = document.getElementById('box1').value;
+  var sum = values.reduce(function(a, b) { return parseInt(a) + parseInt(b); });
+  document.querySelector('#max').innerHTML = values.max();
+  document.querySelector('#min').innerHTML = values.min();
+  document.querySelector('#sum').innerHTML = sum;
+  document.querySelector('#avg').innerHTML = sum / values.length;
+  document.querySelector('#reverse').innerHTML = values.reverse().join(',');
+}
+Array.prototype.max = function() {
+  return Math.max.apply(null, this);
+};
+Array.prototype.min = function() {
+  return Math.min.apply(null, this);
+};
+  </script>
+</blockquote>
+
+<h1><font color="DF013A" size="6">It's Magic !</font></h1>
+<blockquote style="border: 5px solid #000000; color:black; background: aeae84; padding: 10px; width:90%" >
+
+    <textarea id="text" cols="100" rows="18" class="mytext">Write Here...</textarea>
+  
+  <div>
+    <button onclick="clearAll();" class="button">Clear All</button>
+    <button onclick="capitalize();" class="button">Capitalize</button>
+    <button onclick="sort();" class="button">Sort</button>
+    <button onclick="reverse();" class="button">Reverse</button>
+    <button onclick="stripBlank();" class="button">Strip Blank</button>
+    <button onclick="lineNumbers();" class="button">Add Numbers</button>
+    <button onclick="shuffle();" class="button">Shuffle</button>
+  </div>
+
+<script lang="javascript">
+function getLines() {
+    var textarea = document.getElementById("text");
+    return textarea.value.split("\n");
+}
+
+function putLines(a) {
+    var textarea = document.getElementById("text");
+    textarea.value = a.join("\n");
+}
+
+function clearAll() {
+    var textarea = document.getElementById("text");
+    textarea.value = "";
+}
+
+function capitalize() {
+    var textarea = document.getElementById("text");
+    textarea.value = textarea.value.toUpperCase();
+}
+
+function sort() {
+    var a = getLines();
+    a.sort();
+    putLines(a);
+}
+
+function reverse() {
+    var a = getLines();
+    a.reverse();
+    putLines(a);
+}
+
+function stripBlank() {
+    var a = getLines();
+    var a2 = [];
+    for (var i = 0; i < a.length; i++) {
+        if (a[i]) {
+            a2.push(a[i]);
+        }
+    }
+    putLines(a2);
+}
+
+function lineNumbers(a) {
+    var a = getLines();
+    for (var i = 0; i < a.length; i++) {
+        a[i] = (i + 1) + ". " + a[i];
+    }
+    putLines(a);
+}
+
+function shuffle(a) {
+    var a = getLines();
+    for (var i = 0; i < a.length; i++) {
+        var j = i + parseInt(Math.random() * (a.length - i));
+        if (i != j) {
+            var temp = a[i];
+            a[i] = a[j];
+            a[j] = temp;
+        }
+    }
+    putLines(a);
+}
+</script>
+
+</blockquote>
+</div>
+
+<aside>
+  <table border="0" cellpadding="5" cellspacing="3">
+    <tr>
+      <td style="background-color:#01DF01; box-shadow: 6px 6px 6px #111111"><a href="#" onclick="a()"><font color="01DF01">aaa</font></a></td>
+      <td style="background-color:#FFFF00; box-shadow: 6px 6px 6px #111111"><a href="#" onclick="b()"><font color="FFFF00">bbb</font></a></td>
+    </tr>
+    <tr>
+      <td style="background-color:#2E64FE; box-shadow: 6px 6px 6px #111111"><a href="#" onclick="c()"><font color="2E64FE">ccc</font></a></td>
+      <td style="background-color:#FE9A2E; box-shadow: 6px 6px 6px #111111"><a href="#" onclick="d()"><font color="FE9A2E">ddd</font></a></td>
+    </tr>
+
+    <script type="text/javascript">
+  function a() {
+    document.getElementById("myDIV").style.backgroundColor="01DF01"
+    document.getElementById("myDIV").style.color="#ff0000";
+    document.getElementById("myDIV").style.borderColor="ff0000";
+  }
+  function b() {
+    document.getElementById("myDIV").style.backgroundColor="FFFF00"
+    document.getElementById("myDIV").style.color="#006600";
+    document.getElementById("myDIV").style.borderColor="006600";
+  }
+  function c() {
+    document.getElementById("myDIV").style.backgroundColor="2E64FE"
+    document.getElementById("myDIV").style.color="#663300";
+    document.getElementById("myDIV").style.borderColor="663300";
+  }
+  function d() {
+    document.getElementById("myDIV").style.backgroundColor="FE9A2E"
+    document.getElementById("myDIV").style.color="#660066";
+    document.getElementById("myDIV").style.borderColor="660066";
+  }
+  </script>
+  </aside>
+</body>
+</html>

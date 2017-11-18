@@ -1,0 +1,57 @@
+div {
+    color:FF8000;
+    text-align:center;
+    font-family: "Moderne Fraktur", Times, serif;
+    background-image: url("background 6.jpg");
+    padding:5px;
+    font-size:30px;
+}
+nav {
+    color:DF7401;
+    text-align:center;
+    font-family: "BlackChancery", Times, serif;
+    padding:5px;
+    font-size:30px;
+}
+body {
+    color:black;
+    font-size:15px;
+    background-image: url("background 1.jpg");
+}
+a {
+	color:FF0000;
+	text-decoration:none;
+	font-family: "Harrington", Times, serif;
+	font-size:20px;
+	text-decoration:underline;
+}
+aside {
+     width:185px;
+     height:328px;
+     background-image: url("background 4.jpg");
+     padding-left:20;
+     padding-right:20;
+     padding-top:20;
+     padding-bottom:20;
+     margin-left:150;
+     float:left;
+}
+section {
+	 width:900px;
+     height:328px;
+     background-image: url("background 3.jpg");
+     padding-left:20;
+     padding-right:20;
+     padding-top:20;
+     padding-bottom:20;
+     margin-left:300;
+     text-align:justify;
+     font-family: "BlackChancery", Times, serif;
+}
+footer {
+	color:DF7401;
+    text-align:center;
+    font-family: "Harrington", Times, serif;
+    padding:5px;
+    font-size: 20px;
+}
